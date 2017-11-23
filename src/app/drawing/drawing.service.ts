@@ -26,16 +26,16 @@ export class DrawingService {
   }
 
   draw() {
-    const padding: number = 10;
+    const padding: number = 7;
     const R: number = 50;
     const r: number = R * Math.sqrt(3) / 2;
 
-    for (let i = 0; i < 20; i++) {
-      for (let j = 0; j < 20; j++) {
+    for (let i = 0; i < 22; i++) {
+      for (let j = 0; j < 22; j++) {
         const offsetX: number = j % 2 == 0 ? r + padding : 0;
         const center: Point = new Point(
           offsetX + i * (r + padding) * 2,
-          j * R * 2
+          j * (R - padding) * 2
         );
 
         const molly: Konva.Line = this.buildHexagon(center, R);
